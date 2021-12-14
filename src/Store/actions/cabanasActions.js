@@ -1,5 +1,5 @@
 import Swal from 'sweetalert2';
-import axiosClient from '../../config/axios';
+import axios from '../../config/axios';
 import {
   ADD_CABANA,
   ADD_CABANA_SUCCESS,
@@ -23,8 +23,8 @@ export function getAllCabanasAction() {
   return async (dispatch) => {
     dispatch(getAllCabanas());
     try {
-      //const { data } = await axiosClient.get(`https://app-parcialmcga.herokuapp.com/cabanas`);
-      const { data } = await axiosClient.get(`${cabanaUrl}`);
+      //const { data } = await axios.get(`https://app-finalmcga.herokuapp.com//cabanas`);
+      const { data } = await axios.get(`${cabanaUrl}`);
       dispatch(getAllCabanasSuccess(data));
     } catch (error) {
       console.error(error);
@@ -52,9 +52,9 @@ export function addNewCabanaAction(cabana) {
   return async (dispatch) => {
     dispatch(addNewCabana());
     try {
-      // Intenta cargar un Producto -- Cargando = True.
-      //await axiosClient.post(`https://app-parcialmcga.herokuapp.com/cabanas`, cabana);
-      await axiosClient.post(`${cabanaUrl}`, cabana);
+      // Intenta cargar una Cabana -- Cargando = True.
+      //await axios.post(`https://app-finalmcga.herokuapp.com//cabanas`, cabana);
+      await axios.post(`${cabanaUrl}`, cabana);
       // Si lo agrega correctamente, dispara la accion con el objeto de Producto cargado correctamente.
       dispatch(addNewCabanaSuccess(cabana));
 
@@ -99,8 +99,8 @@ export const deleteCabanaAction = (id) => {
   return async (dispatch) => {
     dispatch(deleteCabana());
     try {
-      //await axiosClient.delete(`https://app-parcialmcga.herokuapp.com/cabanas/${id}`);
-      await axiosClient.delete(`${cabanaUrl}/${id}`);
+      //await axios.delete(`https://app-finalmcga.herokuapp.com//cabanas/${id}`);
+      await axios.delete(`${cabanaUrl}/${id}`);
       dispatch(deleteCabanaSuccess(id));
       Swal.fire(
         'Eliminado',
@@ -138,8 +138,8 @@ export const editCabanaAction = (cabana) => {
   return async (dispatch) => {
     try {
       // Primero intenta cargar un producto. Cargando = True.
-      await axiosClient.put(`https://app-parcialmcga.herokuapp.com/cabanas/${cabana._id}`, cabana);
-      //await axiosClient.put(`${cabanaUrl}/${cabana._id}`, cabana);
+      //await axios.put(`https://app-finalmcga.herokuapp.com/cabanas/${cabana._id}`, cabana);
+      await axios.put(`${cabanaUrl}/${cabana._id}`, cabana);
       // Si lo agrega correctamente, dispara la accion con el objeto de producto cargado correctamente.
       dispatch(editCabanaSuccess(cabana));
       dispatch(getAllCabanasAction());
