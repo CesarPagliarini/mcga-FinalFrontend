@@ -4,7 +4,7 @@ Este es el desarrollo del enunciado que brindo la catedra para el cumplimiento d
 
 # Pasos a seguir para la ejecucion
 
-1 - git clone  https://github.com/AlejandroVozella/ParcialDosMCGA.git
+1 - git clone  https://github.com/CesarPagliarini/mcga-FinalFrontend.git
 2 - npm install
 3 - npm start
 4 - Probar en el navegador si efectivamente se inicio correctamente (http://localhost:3001)
@@ -26,6 +26,6 @@ Pagliarini, Cesar
 
 
 # Links GitHub
-Pagliarini, Cesar (https://github.com/CesarPagliarini/mcga-FinalBackend/tree/features-clientes-cabanas-usuarios)
+Pagliarini, Cesar (https://github.com/CesarPagliarini/mcga-FinalFrontend/tree/features-clientes-cabanas-usuarios)
 
 
