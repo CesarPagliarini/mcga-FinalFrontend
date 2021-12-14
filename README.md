@@ -1,6 +1,6 @@
-# Final MCGA - Backend
+# Final MCGA - Frontend
 
-Este es el desarrollo del enunciado que brindo la catedra para el cumplimiento del examen final de la asignatura MCGA (Backend).
+Este es el desarrollo del enunciado que brindo la catedra para el cumplimiento del examen final de la asignatura MCGA (Frontend).
 
 # Pasos a seguir para la ejecucion
 
