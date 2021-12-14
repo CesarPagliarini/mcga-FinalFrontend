@@ -1,5 +1,5 @@
 import Swal from 'sweetalert2';       // Se usa para personalizar las ventanas emergentes
-import axiosClient from '../../config/axios';
+import axios from '../../config/axios';
 import {
   ADD_CLIENT,
   ADD_CLIENT_SUCCESS,
@@ -23,8 +23,7 @@ export function getAllClientsAction() {
   return async (dispatch) => {
     dispatch(getAllClients());
     try {
-      const { data } = await axiosClient.get(`${clientUrl}`, client);
-      await axiosClient.get(`${clientUrl}`, client);
+      const { data } = await axios.get(`${clientUrl}`);
       dispatch(getAllClientsSuccess(data));
     } catch (error) {
       console.error(error);
@@ -53,7 +52,7 @@ export function addNewClientAction(client) {
     dispatch(addNewClient());
     try {
       // Primero intenta cargar un cliente. Cargando = True.
-      await axiosClient.post(`${clientUrl}`, client);
+      await axios.post(`${clientUrl}`, client);
       // Si lo agrega correctamente, dispara la accion con el objeto de cliente cargado correctamente.
       dispatch(addNewClientSuccess(client));
 
@@ -94,7 +93,7 @@ export const deleteClientAction = (id) => {
   return async (dispatch) => {
     dispatch(deleteClient());
     try {
-      await axiosClient.delete(`${clientUrl}/${id}`);
+      await axios.delete(`${clientUrl}/${id}`);
       dispatch(deleteClientSuccess(id));
       Swal.fire(
         'Eliminado',
@@ -132,8 +131,8 @@ export const editClientAction = (client) => {
   return async (dispatch) => {
     try {
       // Primero intenta cargar un cliente. Cargando = True.
-      await axiosClient.put(`${clientUrl}/${client?._id}`, client);
-      //await axiosClient.put(`https://app-finalmcga.herokuapp.com//clientes/${client._id}`, client);
+      await axios.put(`${clientUrl}/${client?._id}`, client);
+      //await axios.put(`https://app-finalmcga.herokuapp.com/clientes/${client._id}`, client);
       // Si lo agrega correctamente, dispara la accion con el objeto de cliente cargado correctamente.
       dispatch(editClientSuccess(client));
       dispatch(getAllClientsAction());
