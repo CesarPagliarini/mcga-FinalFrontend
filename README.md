@@ -18,6 +18,10 @@ react-redux
 redux-thunk'
 sweetalert2
 axios
+firebase
+eslint
+prettier
+husky
 @material-ui
 
 # Integrante
