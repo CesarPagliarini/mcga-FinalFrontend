@@ -15,13 +15,11 @@ react
 react-router-dom
 react-dom
 react-redux
-redux-thunk'
+redux-thunk
+redux-form
 sweetalert2
 axios
-firebase
 eslint
-prettier
-husky
 @material-ui
 
 # Integrante
@@ -29,7 +27,9 @@ husky
 Pagliarini, Cesar 
 
 
-# Links GitHub
+# Link GitHub
 Pagliarini, Cesar (https://github.com/CesarPagliarini/mcga-FinalFrontend/tree/features-clientes-cabanas-usuarios)
 
+# Link Heroku
+https://app-finalmcgafront.herokuapp.com/
 
