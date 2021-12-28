@@ -9,25 +9,30 @@ import store from './Store';
 import Header from './Shared/Header';
 import Sidebar from './Shared/Sidebar';
 import Footer from './Shared/Footer';
-// Components - Clients branch
+// Componentes - Home
+import Home from './components/Home';
+// Componentes - Clients branch
 import Clients from './components/Clients';
 import NewClient from './components/Clients/NewClient';
 import EditClient from './components/Clients/EditClient';
-// Components - Cabañas branch
+// Componentes - Cabañas branch
 import Cabanas from './components/Cabanas';
 import NewCabana from './components/Cabanas/NewCabana';
 import EditCabana from './components/Cabanas/EditCabana';
-//
+// Componnetes - Usuarios
+import Login from './components/Usuarios'
 
 function App() {
   return (
     <Router>
       <Header />
       <Provider store={store}>
+      <Route exact path='/login' component={Login} />
         <div className='flex'>
           <Sidebar />
           <div className='mainOptions'>
             <Switch>
+              <Route exact path="/" component={Home} />
               <Route exact path='/clients' component={Clients} />
               <Route exact path='/clients/new' component={NewClient} />
               <Route exact path='/clients/edit/:id' component={EditClient} />
