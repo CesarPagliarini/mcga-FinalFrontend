@@ -23,7 +23,7 @@ const initialState = {
   selectedClient: null,
 };
 
-export default function (state = initialState, action) {
+export default function clientes(state = initialState, action) {
   switch (action.type) {
     case ADD_CLIENT:
       return {

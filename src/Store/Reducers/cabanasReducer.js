@@ -23,7 +23,7 @@ const initialState = {
   selectedCabana: null,
 };
 
-export default function (state = initialState, action) {
+export default function cabanas(state = initialState, action) {
   switch (action.type) {
     case ADD_CABANA:
       return {

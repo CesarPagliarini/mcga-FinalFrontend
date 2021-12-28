@@ -7,12 +7,12 @@ const NewClient = ({ history }) => {
   // useState Se utiliza para setear los valores en los campos del formulario.
   const [nombre, setearNombre] = useState('');
   const [apellido, setearApellido] = useState('');
-  const [mail, ssetearMail] = useState('');
+  const [mail, setearMail] = useState('');
   const [telefono, setearTelefono] = useState('');
   const [tipo_documento, setearTipoDoc] = useState('');
   const [numero_documento, setearNumeroDoc] = useState('');
   const [domicilio, setearDomicilio] = useState('');
-  const [fecha_nacimiento, setearFechaNacimiento] = useState('');
+  const [fecha_nacimiento, setearfecha_nacimiento] = useState('');
 
   // Permite utilziar los dispatch.
   const dispatch = useDispatch();
@@ -105,7 +105,7 @@ const NewClient = ({ history }) => {
                   placeholder='Email del Cliente'
                   name='email'
                   value={mail}
-                  onChange={(e) => ssetearMail(e.target.value)}
+                  onChange={(e) => setearMail(e.target.value)}
                 />
               </div>
 
@@ -175,7 +175,7 @@ const NewClient = ({ history }) => {
                   placeholder='Fecha Nacimiento'
                   name='fecha_nacimiento'
                   value={fecha_nacimiento}
-                  onChange={(e) => setearFechaNacimiento(e.target.value)}
+                  onChange={(e) => setearfecha_nacimiento(e.target.value)}
                 />
               </div>
 

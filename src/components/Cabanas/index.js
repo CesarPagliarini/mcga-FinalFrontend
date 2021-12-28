@@ -13,12 +13,12 @@ const Cabanas = () => {
     getAllCabanas();
   }, []);
 
-  const { loading, error, cabanas } = useSelector((state) => state.cabanas);
+  const { cargando, error, cabanas } = useSelector((state) => state.cabanas);
 
   return (
     <>
       <h2 className="text-center my-5">Listado de Cabanas</h2>
-      {loading ? <h4 className="text-center"> Loading... </h4> : null}
+      {cargando ? <h4 className="text-center"> Cargando... </h4> : null}
 
       {error ? (
         <p className="alert alert-danger p-2 m-4 text-center">
