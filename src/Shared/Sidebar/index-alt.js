@@ -12,7 +12,10 @@ const Sidebar = () => {
                 <li>
                     <Link to='/cabanas'>Cabanas</Link>
                 </li>
-             </ul>
+                <li>
+                    <Link to='/login'>Login</Link>
+                </li>
+            </ul>
         </div>
     );
   };

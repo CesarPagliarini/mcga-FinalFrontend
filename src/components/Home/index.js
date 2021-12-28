@@ -1,4 +1,4 @@
-import Productos from './home'
+import Login from './home'
 import { connect } from 'react-redux'
 // import { fetchProductos } from '../../redux
 import { logout } from '../../Store/actions/usuariosActions'
@@ -15,4 +15,4 @@ const mapDispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Productos)
+export default connect(mapStateToProps, mapDispatchToProps)(Login)
