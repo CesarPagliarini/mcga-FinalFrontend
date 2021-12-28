@@ -1,11 +1,14 @@
 // import Swal from 'sweetalert2';       // Se usa para personalizar las ventanas emergentes
-// import axios from '../../config/axios';
+import axios from '../../config/axios';
+
 import {
   LOGIN_FETCHING,
   LOGIN_ERROR,
   LOGIN_SUCCESS,
   LOGOUT_USER
 } from '../../types/usuarios';
+
+const usuarioUrl = '/usuarios';
 
 export const loginFetching = () => {
   return {
@@ -36,8 +39,7 @@ export const logoutUser = () => {
 export const login = (email, password) => {
   return (dispatch) => {
       dispatch(loginFetching());
-      //fetch("http://localhost:3001/auth/login", {
-      fetch("http://localhost:5000/usuarios", {
+      fetch("https://app-finalmcga.herokuapp.com/usuarios", {
               method: 'post',
               headers: {
                   'Accept': 'application/json',
@@ -53,10 +55,12 @@ export const login = (email, password) => {
               }
             })
             .catch((error) => {
-              dispatch(loginError(error.message))
+             dispatch(loginError(error.message))
             })
   }
 }
+
+
 
 export const logout = () => {
   return (dispatch) => {
