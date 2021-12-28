@@ -77,6 +77,8 @@ export const login = (email, password) => {
 export const logout = () => {
   return (dispatch) => {
       dispatch(logoutUser());
+      // Alerta exitosa.
+      Swal.fire('Correcto', 'Logout exitoso', 'success');
   }
 }
 

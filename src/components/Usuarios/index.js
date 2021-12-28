@@ -1,4 +1,4 @@
-import Sidebar from './Login'
+import Login from './Login'
 import { connect } from 'react-redux'
 import { login } from '../../Store/actions/usuariosActions'
 import { reduxForm } from 'redux-form'
@@ -26,4 +26,4 @@ const reduxFormConfig = {
   onSubmit,
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(reduxForm(reduxFormConfig)(Sidebar))
+export default connect(mapStateToProps, mapDispatchToProps)(reduxForm(reduxFormConfig)(Login))

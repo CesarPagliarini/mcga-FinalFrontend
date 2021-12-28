@@ -138,7 +138,7 @@ export const editCabanaAction = (cabana) => {
     try {
       // Primero intenta cargar un producto. Cargando = True.
       //await axios.put(`https://app-finalmcga.herokuapp.com/cabanas/${cabana._id}`, cabana);
-      await axios.put(`${cabanaUrl}/${cabana._id}`, cabana);
+      await axios.put(`${cabanaUrl}/${cabana?._id}`, cabana);
       // Si lo agrega correctamente, dispara la accion con el objeto de producto cargado correctamente.
       dispatch(editCabanaSuccess(cabana));
       dispatch(getAllCabanasAction());
