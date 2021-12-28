@@ -1,5 +1,5 @@
-// import Swal from 'sweetalert2';       // Se usa para personalizar las ventanas emergentes
-import axios from '../../config/axios';
+import Swal from 'sweetalert2';       // Se usa para personalizar las ventanas emergentes
+// import axios from '../../config/axios';
 
 import {
   LOGIN_FETCHING,
@@ -50,12 +50,24 @@ export const login = (email, password) => {
               const data = await response.json()
               if(response.status === 200) {
                   dispatch(loginSuccess(data))
+                  // Alerta exitosa.
+                  Swal.fire('Correcto', 'Login exitoso', 'success');
               } else {
                   dispatch(loginError(data.message))
+                  Swal.fire({
+                    icon: 'error',
+                    title: 'Ocurrio un error.',
+                    text: 'Ocurrio un error, verifique los datos ingresados.',
+                  });
               }
             })
             .catch((error) => {
              dispatch(loginError(error.message))
+             Swal.fire({
+              icon: 'error',
+              title: 'Ocurrio un error.',
+              text: 'Ocurrio un error, verifique los datos ingresados.',
+            });
             })
   }
 }
